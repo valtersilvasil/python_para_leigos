@@ -1,0 +1,30 @@
+# Bloco 1: Lista de vendas com região e valor
+# Aqui estamos criando uma lista chamada 'vendas' que contém tuplas.
+# Cada tupla representa uma região e o valor das vendas naquela região.
+vendas = [("Sul", 1200), ("Norte", 1000), ("Centro-Oeste", 700), ("Sul", 450), ("Norte", 800)]
+
+# Bloco 2: Dicionário para somar vendas por região
+# Estamos criando um dicionário chamado 'total_por_regiao'.
+# Este dicionário vai armazenar a soma das vendas para cada região.
+total_por_regiao = {}
+
+# Bloco 3: Loop para calcular o total por região
+# Iniciamos um loop que vai percorrer cada tupla na lista 'vendas'.
+# Para cada tupla, vamos separar a região (regiao) e o valor (valor).
+for regiao, valor in vendas:
+    # Aqui estamos verificando se a região já existe no dicionário 'total_por_regiao'.
+    if regiao in total_por_regiao:
+        # Se a região já estiver no dicionário, somamos o valor das vendas ao total existente.
+        total_por_regiao[regiao] += valor  # Soma valor para a região
+    else:
+        # Se a região não estiver no dicionário, adicionamos ela e definimos o valor das vendas.
+        total_por_regiao[regiao] = valor  # Adiciona nova região no dicionário
+
+# Bloco 4: Exibe o relatório de vendas por região
+# Aqui estamos imprimindo um cabeçalho para o relatório.
+print("Relatório de Vendas por Região:")
+# Iniciamos um novo loop para percorrer cada região e seu total de vendas armazenados no dicionário.
+for regiao, total in total_por_regiao.items():
+    # Aqui estamos formatando a saída para mostrar a região e o total de vendas correspondente.
+    print(f"Região {regiao}: R$ {total}")  # Exibe a região e o total em formato monetário
+
